@@ -33,7 +33,7 @@ class User:
         return output
 
     def delete(self, data):
-        filt = data['Document']
+        filt = data['Filter']
         response = self.collection.delete_one(filt)
         output = {'Status': 'Successfully Deleted' if response.deleted_count > 0 else "Document not found."}
         return output
