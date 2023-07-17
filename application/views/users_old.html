@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resultados de lectura</title>
+</head>
+
+<body>
+    <h1>Resultados de lectura</h1>
+    <ul>
+        {% for document in documents %}
+        <li>
+            <p>ID: {{ document._id }}</p>
+            <p>Primer Nombre: {{ document.first_name }}</p>
+            <p>Apellido: {{ document.last_name }}</p>
+            <p>Edad: {{ document.age }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

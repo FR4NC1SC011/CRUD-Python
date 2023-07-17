@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resultados</title>
+</head>
+
+<body>
+    <h1>Resultados</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for document in documents %}
+            <tr>
+                <td>{{ document.first_name }}</td>
+                <td>{{ document.last_name }}</td>
+                <td>{{ document.age }}</td>
+                <td>
+                    <form action="/update/{{ document._id }}" method="GET">
+                        <button type="submit">Actualizar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/delete/{{ document._id }}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
