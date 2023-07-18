@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 class User:
     def __init__(self, data=None):
-        self.client = MongoClient("mongodb://localhost:27017/")  
+        self.client = MongoClient("mongodb://mymongo_1/")  
       
         database = "Python-CRUD"
         collection = "people"

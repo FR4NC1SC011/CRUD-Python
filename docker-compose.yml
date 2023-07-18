@@ -1,11 +1,16 @@
-version: "3"
+version: "1"
 services:
   mymongo_1:
     image: "mongo"
-
-  myreader:
+    container_name: mongo
+    ports:
+      - '27017:27017'
+  flask:
     build: .
-    depends_on:
-      - mymongo_1
+    container_name: flask
     ports:
       - "5001:5001"
+    volumes:
+      - .:/code
+    depends_on:
+      - mymongo_1
