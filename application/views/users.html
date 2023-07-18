@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Resultados</title>
+    <title>Usuarios</title>
 </head>
 
 <body>
-    <h1>Resultados</h1>
+    <h1>Usuarios</h1>
     <table>
         <thead>
             <tr>
@@ -36,6 +36,9 @@
             </tr>
             {% endfor %}
         </tbody>
+        <form action="/create" method="GET">
+            <button type="submit">Crear</button>
+        </form>
     </table>
 </body>
 

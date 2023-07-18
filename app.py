@@ -1,4 +1,4 @@
-from flask import Flask, Response, json
+from flask import Flask, redirect, url_for
 # from application import app
 from application.controllers.user_controller import user_bp
 import os
@@ -10,9 +10,7 @@ app.register_blueprint(user_bp)
 
 @app.route('/')
 def base():
-    return Response(response=json.dumps({"Status": "UP"}),
-                    status=200,
-                    mimetype='application/json')
+    return redirect(url_for('user.read'))
   
 if __name__ == '__main__':
-    app.run(debug=True, port=5001, host='127.0.0.1')
+    app.run(debug=True, port=5001, host='0.0.0.0')
